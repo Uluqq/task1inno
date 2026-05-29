@@ -32,7 +32,9 @@ public class ArrayWrapper {
                 "array=" + Arrays.toString(array) +
                 '}';
     }
-
+    public void setArray(int[] array) {
+        this.array = (array != null) ? Arrays.copyOf(array, array.length) : null;
+    }
     public int[] getArray() {
         if (array != null){
             return Arrays.copyOf(array, array.length);
