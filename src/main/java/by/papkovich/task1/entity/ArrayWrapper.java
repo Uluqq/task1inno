@@ -28,10 +28,19 @@ public class ArrayWrapper {
 
     @Override
     public String toString() {
-        return "ArrayWrapper{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+        final StringBuffer sb = new StringBuffer("ArrayWrapper{");
+        sb.append("array=");
+        if (array == null) sb.append("null");
+        else {
+            sb.append('[');
+            for (int i = 0; i < array.length; ++i)
+                sb.append(i == 0 ? "" : ", ").append(array[i]);
+            sb.append(']');
+        }
+        sb.append('}');
+        return sb.toString();
     }
+
     public void setArray(int[] array) {
         if (array != null) {
             this.array = Arrays.copyOf(array, array.length);

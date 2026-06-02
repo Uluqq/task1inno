@@ -14,15 +14,15 @@ public class ArrayFileReaderImpl implements ArrayFileReader {
     private static final Logger logger = LogManager.getLogger(ArrayFileReaderImpl.class);
 
     @Override
-    public List<String> read(String filePath) throws ArrayWrapperException {
-        logger.info("Attempting to read file: {}", filePath);
+    public List<String> readLinesFromFile(String filePath) throws ArrayWrapperException {
+        logger.info("Attempting to readLinesFromFile file: {}", filePath);
         try {
             List<String> lines = Files.readAllLines(Paths.get(filePath));
-            logger.info("Successfully read {} lines", lines.size());
+            logger.info("Successfully readLinesFromFile {} lines", lines.size());
             return lines;
         } catch (IOException e) {
-            logger.error("Failed to read file: {}", filePath, e);
-            throw new ArrayWrapperException("Unable to read file: " + filePath, e);
+            logger.error("Failed to readLinesFromFile file: {}", filePath, e);
+            throw new ArrayWrapperException("Unable to readLinesFromFile file: " + filePath, e);
         }
     }
 }

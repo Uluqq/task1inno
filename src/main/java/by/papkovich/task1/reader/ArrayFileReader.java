@@ -5,5 +5,5 @@ import by.papkovich.task1.exception.ArrayWrapperException;
 import java.util.List;
 
 public interface ArrayFileReader {
-    List<String> read(String filePath) throws ArrayWrapperException;
+    List<String> readLinesFromFile(String filePath) throws ArrayWrapperException;
 }
