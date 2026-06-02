@@ -1,10 +1,11 @@
-package by.papkovich.task1.parser;
+package by.papkovich.task1.parser.impl;
 
+import by.papkovich.task1.parser.ArrayParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import by.papkovich.task1.validator.ArrayValidator;
 
-public class ArrayParserImpl implements ArrayParser{
+public class ArrayParserImpl implements ArrayParser {
     private final ArrayValidator validator;
 
     public ArrayParserImpl(ArrayValidator validator) {

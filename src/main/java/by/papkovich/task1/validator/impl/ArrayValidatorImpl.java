@@ -1,4 +1,6 @@
-package by.papkovich.task1.validator;
+package by.papkovich.task1.validator.impl;
+
+import by.papkovich.task1.validator.ArrayValidator;
 
 public class ArrayValidatorImpl implements ArrayValidator {
     public static final String REGEX_VALID_NUMBER = "^-?\\d+$";

@@ -1,8 +1,9 @@
 package by.papkovich.task1.parser;
 
+import by.papkovich.task1.parser.impl.ArrayParserImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import by.papkovich.task1.validator.ArrayValidatorImpl;
+import by.papkovich.task1.validator.impl.ArrayValidatorImpl;
 
 public class ArrayParserImplTest {
     private final ArrayParser parser = new ArrayParserImpl(new ArrayValidatorImpl());

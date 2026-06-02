@@ -1,5 +1,6 @@
-package by.papkovich.task1.reader;
+package by.papkovich.task1.reader.impl;
 
+import by.papkovich.task1.reader.ArrayFileReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import by.papkovich.task1.exception.ArrayWrapperException;

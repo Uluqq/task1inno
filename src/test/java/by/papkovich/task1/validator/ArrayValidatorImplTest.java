@@ -1,5 +1,6 @@
 package by.papkovich.task1.validator;
 
+import by.papkovich.task1.validator.impl.ArrayValidatorImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
