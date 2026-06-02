@@ -11,6 +11,9 @@ public class ArrayParserImpl implements ArrayParser{
         this.validator = validator;
     }
     private static final Logger logger = LogManager.getLogger(ArrayParserImpl.class);
+    // Expected value: comma-separated numbers (e.g., "1, 2, 3")
+    private static final String DELIMITER = "\\s+-\\s+|\\s+|,\\s*|;\\s*";
+
     @Override
     public int[] parse(String line) {
         if (line == null || line.trim().isEmpty()) {
@@ -18,7 +21,7 @@ public class ArrayParserImpl implements ArrayParser{
             return new int[0];
         }
         logger.info("Attempting to parse line: {}", line);
-        String[] elements = line.split(",");
+        String[] elements = line.split(DELIMITER);
         int[] tempArray = new int[elements.length];
         int validCount = 0;
         for (String element : elements){
