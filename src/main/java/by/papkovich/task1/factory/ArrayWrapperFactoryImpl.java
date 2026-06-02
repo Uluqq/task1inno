@@ -1,8 +1,8 @@
-package org.task1.factory;
+package by.papkovich.task1.factory;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.task1.entity.ArrayWrapper;
+import by.papkovich.task1.entity.ArrayWrapper;
 
 public class ArrayWrapperFactoryImpl implements ArrayWrapperFactory{
 

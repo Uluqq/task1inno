@@ -1,6 +1,6 @@
-package org.task1.reader;
+package by.papkovich.task1.reader;
 
-import org.task1.exception.ArrayWrapperException;
+import by.papkovich.task1.exception.ArrayWrapperException;
 
 import java.util.List;
 

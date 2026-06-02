@@ -1,4 +1,4 @@
-package org.task1.exception;
+package by.papkovich.task1.exception;
 
 public class ArrayWrapperException extends Exception {
     public ArrayWrapperException(){

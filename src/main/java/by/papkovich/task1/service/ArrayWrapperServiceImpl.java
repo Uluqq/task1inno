@@ -1,8 +1,8 @@
-package org.task1.service;
+package by.papkovich.task1.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.task1.entity.ArrayWrapper;
+import by.papkovich.task1.entity.ArrayWrapper;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 

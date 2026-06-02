@@ -1,4 +1,4 @@
-package org.task1.validator;
+package by.papkovich.task1.validator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

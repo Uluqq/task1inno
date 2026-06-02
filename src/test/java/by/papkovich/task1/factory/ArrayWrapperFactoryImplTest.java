@@ -1,8 +1,8 @@
-package org.task1.factory;
+package by.papkovich.task1.factory;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.task1.entity.ArrayWrapper;
+import by.papkovich.task1.entity.ArrayWrapper;
 
 public class ArrayWrapperFactoryImplTest {
     @Test

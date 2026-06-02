@@ -1,4 +1,4 @@
-package org.task1.entity;
+package by.papkovich.task1.entity;
 
 import java.util.Arrays;
 
