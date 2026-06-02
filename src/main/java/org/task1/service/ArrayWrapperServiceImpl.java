@@ -1,15 +1,20 @@
 package org.task1.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.task1.entity.ArrayWrapper;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 
 public class ArrayWrapperServiceImpl implements ArrayWrapperService{
 
+    private static final Logger logger = LogManager.getLogger(ArrayWrapperServiceImpl.class);
+
     @Override
     public OptionalInt getMin(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length == 0){
+            logger.warn("Attempted to find min value in an empty or null array");
             return OptionalInt.empty();
         }
         int min = array[0];
@@ -18,6 +23,7 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
                 min = a;
             }
         }
+        logger.info("Calculated minimum value: {}", min);
         return OptionalInt.of(min);
     }
 
@@ -25,6 +31,7 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
     public OptionalInt getMax(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length == 0){
+            logger.warn("Attempted to find min value in an empty or null array");
             return OptionalInt.empty();
         }
         int max = array[0];
@@ -33,6 +40,7 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
                 max = a;
             }
         }
+        logger.info("Calculated maximum value: {}", max);
         return OptionalInt.of(max);
     }
 
@@ -40,12 +48,14 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
     public OptionalInt getSum(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length == 0){
+            logger.warn("Attempted to find min value in an empty or null array");
             return OptionalInt.empty();
         }
         int sum = 0;
         for (int a : array) {
             sum +=  a;
         }
+        logger.info("Calculated sum: {}", sum);
         return OptionalInt.of(sum);
     }
 
@@ -53,6 +63,7 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
     public OptionalDouble getAverage(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length == 0){
+            logger.warn("Attempted to find min value in an empty or null array");
             return OptionalDouble.empty();
         }
         int sum = 0;
@@ -60,6 +71,7 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
             sum +=  a;
         }
         double avg = (double) sum / array.length;
+        logger.info("Calculated average: {}", avg);
         return OptionalDouble.of(avg);
     }
 
@@ -67,6 +79,7 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
     public void bubbleSort(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length < 2){
+            logger.info("Array is empty or has one element, sorting skipped");
             return;
         }
         int n = array.length;
@@ -85,6 +98,7 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
                 break;
             }
         }
+        logger.info("Array successfully sorted using Bubble Sort");
         wrapper.setArray(array);
     }
 
@@ -92,6 +106,7 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
     public void insertionSort(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length < 2){
+            logger.info("Array is empty or has one element, sorting skipped");
             return;
         }
         for (int i = 1; i < array.length; i++) {
@@ -103,6 +118,7 @@ public class ArrayWrapperServiceImpl implements ArrayWrapperService{
             }
             array[j + 1] = current;
         }
+        logger.info("Array successfully sorted using Insertion Sort");
         wrapper.setArray(array);
     }
 }
