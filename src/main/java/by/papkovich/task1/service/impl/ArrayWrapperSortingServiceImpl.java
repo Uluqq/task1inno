@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 public class ArrayWrapperSortingServiceImpl implements ArrayWrapperSortingService {
 
-  private static final Logger logger = LogManager.getLogger(ArrayWrapperServiceCalculatorImpl.class);
+  private static final Logger logger = LogManager.getLogger(ArrayWrapperSortingServiceImpl.class);
 
   @Override
   public void bubbleSort(ArrayWrapper wrapper) {

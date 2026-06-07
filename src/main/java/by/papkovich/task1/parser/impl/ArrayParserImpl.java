@@ -12,7 +12,7 @@ public class ArrayParserImpl implements ArrayParser {
         this.validator = validator;
     }
     private static final Logger logger = LogManager.getLogger(ArrayParserImpl.class);
-    // Expected value: comma-separated numbers (e.g., "1, 2, 3")
+    // Expected value: comma separated numbers (e.g., "1, 2, 3")
     private static final String DELIMITER = "\\s+-\\s+|\\s+|,\\s*|;\\s*";
 
     @Override

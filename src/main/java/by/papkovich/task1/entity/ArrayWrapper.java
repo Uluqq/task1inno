@@ -1,11 +1,17 @@
 package by.papkovich.task1.entity;
 
-import java.util.Arrays;
+import by.papkovich.task1.observer.ArrayWrapperObservable;
+import by.papkovich.task1.observer.ArrayWrapperObserver;
 
-public class ArrayWrapper {
+import java.util.*;
+
+public class ArrayWrapper implements ArrayWrapperObservable {
     private int[] array;
+    private UUID id;
+    private List<ArrayWrapperObserver> observers = new ArrayList<>();
 
     public ArrayWrapper(int[] array){
+        this.id = UUID.randomUUID();
         if (array != null){
             this.array = Arrays.copyOf(array, array.length);
         } else {
@@ -15,15 +21,14 @@ public class ArrayWrapper {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ArrayWrapper that = (ArrayWrapper) o;
-        return Arrays.equals(array, that.array);
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(array);
+        return Objects.hashCode(id);
     }
 
     @Override
@@ -37,6 +42,7 @@ public class ArrayWrapper {
                 sb.append(i == 0 ? "" : ", ").append(array[i]);
             sb.append(']');
         }
+        sb.append(", id=").append(id);
         sb.append('}');
         return sb.toString();
     }
@@ -47,12 +53,34 @@ public class ArrayWrapper {
         } else {
             this.array = null;
         }
+        notifyObservers();
     }
     public int[] getArray() {
         if (array != null){
             return Arrays.copyOf(array, array.length);
         } else {
             return null;
+        }
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    @Override
+    public void attach(ArrayWrapperObserver observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void detach(ArrayWrapperObserver observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (ArrayWrapperObserver observer : observers){
+            observer.updateArrayWrapper(this);
         }
     }
 }
