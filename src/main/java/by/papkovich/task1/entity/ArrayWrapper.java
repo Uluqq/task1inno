@@ -18,10 +18,18 @@ public class ArrayWrapper implements ArrayWrapperObservable {
             this.array = null;
         }
     }
+    public int getLength() {
+        if (array == null) {
+            return 0;
+        }
+        return array.length;
+    }
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
         ArrayWrapper that = (ArrayWrapper) o;
         return Objects.equals(id, that.id);
     }

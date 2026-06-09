@@ -1,8 +1,10 @@
 package by.papkovich.task1.repository;
 
 import by.papkovich.task1.entity.ArrayWrapper;
+import by.papkovich.task1.specification.ArrayWrapperSpecification;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ArrayWrapperRepository {
@@ -25,5 +27,17 @@ public class ArrayWrapperRepository {
   }
   public void removeArrayWrapper(ArrayWrapper arrayWrapper){
     arrayWrappers.remove(arrayWrapper);
+  }
+  public List<ArrayWrapper> findBy(ArrayWrapperSpecification specification){
+    List<ArrayWrapper> result = new ArrayList<>();
+    for (ArrayWrapper arrayWrapper : arrayWrappers){
+      if (specification.specifyArrayWrapper(arrayWrapper)){
+        result.add(arrayWrapper);
+      }
+    }
+    return result;
+  }
+  public void sortBy(Comparator<ArrayWrapper> comparator){
+    arrayWrappers.sort(comparator);
   }
 }
