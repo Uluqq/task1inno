@@ -36,7 +36,7 @@ public class ArrayWrapperRepository {
   }
 
   public List<ArrayWrapper> findBy(ArrayWrapperSpecification specification){
-    logger.info("Starting repository search using specification: {}", specification.getClass().getSimpleName());
+    logger.info("Starting repository search using specification: {}", specification.getClass());
     List<ArrayWrapper> result = new ArrayList<>();
     for (ArrayWrapper arrayWrapper : arrayWrappers){
       if (specification.specifyArrayWrapper(arrayWrapper)){
@@ -48,7 +48,7 @@ public class ArrayWrapperRepository {
   }
 
   public void sortBy(Comparator<ArrayWrapper> comparator){
-    logger.info("Sorting repository using comparator: {}", comparator.getClass().getSimpleName());
+    logger.info("Sorting repository using comparator: {}", comparator.getClass());
     arrayWrappers.sort(comparator);
   }
 }
