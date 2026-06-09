@@ -15,7 +15,7 @@ public class ArrayWrapperServiceCalculatorImpl implements ArrayWrapperCalculator
     public OptionalInt getMin(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length == 0){
-            logger.warn("Attempted to find min value in an empty or null array");
+            logger.warn("Attempted to find minj value in an empty or null array");
             return OptionalInt.empty();
         }
         int min = array[0];
@@ -32,7 +32,7 @@ public class ArrayWrapperServiceCalculatorImpl implements ArrayWrapperCalculator
     public OptionalInt getMax(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length == 0){
-            logger.warn("Attempted to find min value in an empty or null array");
+            logger.warn("Attempted to find max value in an empty or null array");
             return OptionalInt.empty();
         }
         int max = array[0];
@@ -49,7 +49,7 @@ public class ArrayWrapperServiceCalculatorImpl implements ArrayWrapperCalculator
     public OptionalInt getSum(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length == 0){
-            logger.warn("Attempted to find min value in an empty or null array");
+            logger.warn("Attempted to find sum in an empty or null array");
             return OptionalInt.empty();
         }
         int sum = 0;
@@ -64,7 +64,7 @@ public class ArrayWrapperServiceCalculatorImpl implements ArrayWrapperCalculator
     public OptionalDouble getAverage(ArrayWrapper wrapper) {
         int[] array = wrapper.getArray();
         if (array == null || array.length == 0){
-            logger.warn("Attempted to find min value in an empty or null array");
+            logger.warn("Attempted to find average in an empty or null array");
             return OptionalDouble.empty();
         }
         int sum = 0;

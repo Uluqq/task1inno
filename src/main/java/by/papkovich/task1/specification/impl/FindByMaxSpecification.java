@@ -17,9 +17,9 @@ public class FindByMaxSpecification implements ArrayWrapperSpecification {
   @Override
   public boolean specifyArrayWrapper(ArrayWrapper wrapper) {
     UUID wrapperId = wrapper.getId();
-    int currentSum = warehouse.getValues(wrapperId)
+    int currentMax = warehouse.getValues(wrapperId)
             .map(arrayStatistics -> arrayStatistics.max())
             .orElse(0);
-    return currentSum == targetMax;
+    return currentMax == targetMax;
   }
 }

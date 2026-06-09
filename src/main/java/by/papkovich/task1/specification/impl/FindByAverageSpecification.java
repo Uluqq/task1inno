@@ -17,9 +17,9 @@ public class FindByAverageSpecification implements ArrayWrapperSpecification {
   @Override
   public boolean specifyArrayWrapper(ArrayWrapper wrapper) {
     UUID wrapperId = wrapper.getId();
-    Double currentSum = warehouse.getValues(wrapperId)
+    Double currentAverage = warehouse.getValues(wrapperId)
             .map(arrayStatistics -> arrayStatistics.average())
             .orElse(0.0);
-    return currentSum == targetAverage;
+    return currentAverage == targetAverage;
   }
 }

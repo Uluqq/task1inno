@@ -1,4 +1,4 @@
-package by.papkovich.task1.comporator;
+package by.papkovich.task1.comparator;
 
 import by.papkovich.task1.entity.ArrayWrapper;
 

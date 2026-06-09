@@ -17,9 +17,9 @@ public class FindByMinSpecification implements ArrayWrapperSpecification {
   @Override
   public boolean specifyArrayWrapper(ArrayWrapper wrapper) {
     UUID wrapperId = wrapper.getId();
-    int currentSum = warehouse.getValues(wrapperId)
+    int currentMin = warehouse.getValues(wrapperId)
             .map(arrayStatistics -> arrayStatistics.min())
             .orElse(0);
-    return currentSum == targetMin;
+    return currentMin == targetMin;
   }
 }

@@ -1,4 +1,4 @@
-package by.papkovich.task1.comporator;
+package by.papkovich.task1.comparator;
 
 import by.papkovich.task1.entity.ArrayWrapper;
 import by.papkovich.task1.warehouse.ArrayWrapperWarehouse;
@@ -6,21 +6,22 @@ import by.papkovich.task1.warehouse.ArrayWrapperWarehouse;
 import java.util.Comparator;
 import java.util.UUID;
 
-public class ArrayWrapperSumComparator implements Comparator<ArrayWrapper> {
+public class ArrayWrapperMaxComparator implements Comparator<ArrayWrapper> {
   private final ArrayWrapperWarehouse warehouse = ArrayWrapperWarehouse.getWarehouseInstance();
 
   @Override
   public int compare(ArrayWrapper firstWrapper, ArrayWrapper secondWrapper) {
 
     UUID firstWrapperId = firstWrapper.getId();
-    int firstSum = warehouse.getValues(firstWrapperId)
-            .map(arrayStatistics -> arrayStatistics.sum())
+    int firstMax = warehouse.getValues(firstWrapperId)
+            .map(arrayStatistics -> arrayStatistics.max())
             .orElse(0);
 
     UUID secondWrapperId = secondWrapper.getId();
-    int secondSum = warehouse.getValues(secondWrapperId)
-            .map(arrayStatistics -> arrayStatistics.sum())
+    int secondMax = warehouse.getValues(secondWrapperId)
+            .map(arrayStatistics -> arrayStatistics.max())
             .orElse(0);
-    return Integer.compare(firstSum, secondSum);
+
+    return Integer.compare(firstMax, secondMax);
   }
 }
