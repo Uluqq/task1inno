@@ -5,7 +5,7 @@ import by.papkovich.task1.observer.ArrayWrapperObserver;
 
 import java.util.*;
 
-public class ArrayWrapper implements ArrayWrapperObservable {
+public class    ArrayWrapper implements ArrayWrapperObservable {
     private int[] array;
     private UUID id;
     private List<ArrayWrapperObserver> observers = new ArrayList<>();

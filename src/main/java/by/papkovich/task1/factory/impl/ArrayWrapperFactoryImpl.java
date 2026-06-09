@@ -13,8 +13,6 @@ public class ArrayWrapperFactoryImpl implements ArrayWrapperFactory {
     public ArrayWrapper createWrapper(int[] parsedArray) {
         ArrayWrapper wrapper = new ArrayWrapper(parsedArray);
         logger.info("Successfully created ArrayWrapper with array of size: {}", wrapper.getLength());
-
-        wrapper.notifyObservers();
         return wrapper;
     }
 }

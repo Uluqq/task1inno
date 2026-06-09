@@ -20,8 +20,9 @@ public class ArrayWrapperObserverImpl implements ArrayWrapperObserver {
 
   @Override
   public void updateArrayWrapper(ArrayWrapper wrapper) {
-    logger.warn("Array is empty or null. Statistics calculation skipped for ID: {}", wrapper.getId());
+    logger.info("Observer triggered for ArrayWrapper ID: {}", wrapper.getId());
     if (wrapper.getArray() == null || wrapper.getArray().length == 0) {
+      logger.warn("Array is empty or null. Statistics calculation skipped for ID: {}", wrapper.getId());
       return;
     }
     ArrayStatistics statistics = new ArrayStatistics(
